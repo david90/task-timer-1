@@ -53,3 +53,51 @@ input[type = "text"] {
     color:white;
 }
 
+
+#tasklist{
+    margin: auto;
+    width: 40%;
+    top:25%;
+    height:60%;
+    position:relative;
+    overflow:auto;
+}
+
+.task{
+    width: 98%;
+    height:15%;
+    text-align: center;
+    position:relative;
+    border:1px solid lightgray;
+    border-radius: 2px;
+    margin-bottom:5px;
+    box-shadow: 3px 3px lightgray;
+}
+
+.task-subitem{
+    width:20%;
+    color: #888888;
+    float:right;
+    height:100%;
+    top:3%;
+    position:absolute;
+    overflow: auto;
+}
+
+.task-name{
+    width:35%;
+    height:60%;
+    top:30%;
+    color:gray;
+    position:relative;
+    overflow: auto;
+    text-align: left;
+}
+
+
+
+
+
+#timing-template{
+    display: none;
+}
