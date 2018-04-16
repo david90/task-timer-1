@@ -62,6 +62,27 @@ function createTask() {
                 delete pausedTasks[id];
             }
         });
+        /*Creates click event handler for the Finish button*/
+        myTask.children(":nth-child(2)").click(function() {
+            if (id in runningTasks || id in pausedTasks) {
+                delete pausedTasks[id];
+                delete runningTasks[id];
+                myTask.css("background-color", "lightgray");
+                myTask.css("box-shadow", "3px 3px gray");
+
+                /*Move time to where finish button was*/
+                var myHTML = myTask.children(":nth-child(4)").html();
+                myTask.children(":nth-child(2)").html(myHTML);
+                myTask.children(":nth-child(2)").attr("disabled", "true");
+
+                myTask.children(":nth-child(4)").html("Completed");
+                myTask.children(":nth-child(4)").css({"top": "0%","width":"100%", "left":"0%"});
+
+                myTask.children(":nth-child(3)").html("");
+                myTask.children(":nth-child(3)").attr("disabled", "true");
+
+            }
+        });
 
     }
 }
@@ -69,6 +90,12 @@ function createTask() {
 /*Add event listener to start task button */
 newTaskButton.click(addTaskToTaskList);
 
+/*You can also start task with enter key*/
+input.on("keydown", function(e) {
+    if (e.which === 13) {
+        addTaskToTaskList()
+    }
+});
 
 /*Increments by 1 all the tasks that are in runningTasks*/
 function incrementTime(){
