@@ -7,12 +7,10 @@ var taskList = $("#tasklist");
 var timingTaskTemplate = $("#timing-template");
 var input = $("#input");
 
-
 var firstTask = true;
 var runningTasks = {};
 var pausedTasks = {};
 var idCount = 0;
-
 
 /*Adds task to task list while handling the creation of the first task*/
 function addTaskToTaskList() {
@@ -25,10 +23,8 @@ function addTaskToTaskList() {
     createTask();
 }
 
-
 function createTask() {
-    var taskName = "     " + input.val();
-    /*get what user typed*/
+    var taskName = "     " + input.val();                /*get what user typed*/
     if (taskName.length !== 0) {                         /*only create task if they typed something*/
         /*Make task by cloning a task template*/
         var newTask = timingTaskTemplate.clone().removeAttr("id");
@@ -41,7 +37,7 @@ function createTask() {
         myTask.attr("id",  id);
         idCount += 1;
 
-        newTask.prependTo(taskList);                      /*add it to beginning of task list*/
+        newTask.prependTo(taskList);                     /*add it to beginning of task list*/
 
         /*Creates click event handler for the pause and play button*/
         myTask.children(":nth-child(3)").click(function() {
@@ -80,10 +76,8 @@ function createTask() {
 
                 myTask.children(":nth-child(3)").html("");
                 myTask.children(":nth-child(3)").attr("disabled", "true");
-
             }
         });
-
     }
 }
 
@@ -115,10 +109,8 @@ function incrementTime(){
         if (hrs !== 0) {
             myString = hrs + " hr " + myString
         }
-
         $("#"+keys[i]).children(":nth-child(4)").text( myString);
     }
-
 }
 
 setInterval(incrementTime, 1000);

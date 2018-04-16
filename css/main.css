@@ -94,7 +94,6 @@ input[type = "text"] {
     text-align: left;
 }
 
-
 /*found on Stack Overflow*/
 .wordwrap {
     white-space: pre-wrap;      /* CSS3 */
@@ -103,7 +102,6 @@ input[type = "text"] {
     word-break: break-all;
     overflow-wrap: break-word;
 }
-
 
 #timing-template{
     display: none;
